@@ -1,25 +1,17 @@
 let number = 0;
-const videoArea = document.getElementById("video");
+let data = []; // Añadir variable para almacenar los datos recuperados de ajax.json
+const button = document.getElementById('btn');
 const titleArea = document.getElementById("title");
 const contentArea = document.getElementById("content");
-const button = document.getElementById('btn');
+const videoArea = document.getElementById("video");
 
 function getData() {
-  button.addEventListener('click', e => {
-    const request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
-      if (request.readyState == 4) {
-        if(request.status == 200) {
-          titleArea.innerHTML = request.response[number].title;
-          contentArea.innerHTML = request.response[number].content;
-          videoArea.setAttribute("src", request.response[number].url);
-          number == 2 ? number = 0 : number++;
-        }
-      }
-    }
-    request.open("GET", "ajax.json");
-    request.responseType = "json";
-    request.send(null);
-  })
+  // Describir el proceso de recuperación de datos de ajax.json
 }
-window.onload = getData;
+
+function changeVideo() {
+  // Describe el proceso cuando se hace clic en el botón.
+  // Sólo llamar al proceso getData si no se recuperan datos de ajax.json
+}
+
+window.onload = changeVideo;
